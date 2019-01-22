@@ -1,9 +1,4 @@
-/*
- * FINGER_PRINT_MODULE.h
- *
- *  Created on: 21 Jan 2019
- *      Author: HooS
- */
+
 /**************************************************************************************************************************/
 /*Type : Finger Print Driver ( Header File )                                                                                            */
 /*Author : ITI_39                                                                                                         */
