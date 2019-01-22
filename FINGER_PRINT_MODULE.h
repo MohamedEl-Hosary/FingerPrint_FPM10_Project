@@ -16,7 +16,7 @@
 #include <avr/delay.h>
 
 
-
+#define amir 12
 
 #define True 0x01;
 #define False 0x00;
