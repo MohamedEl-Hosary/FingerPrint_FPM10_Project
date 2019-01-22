@@ -31,6 +31,8 @@
 #define FINGER_Print_GenTemplate 0x05
 //To Store Template
 #define FINGER_Print_StoreTemplate 0x06
+//To Check ID
+#define FINGER_Print_CheckID 0x07
 //To Delete Template
 #define FINGER_Print_DelTemplate 0x0c
 //To Formate The Flash Memory
@@ -83,6 +85,9 @@
 //to store template  Store
 #define PacketLengh_Store_1 0x00
 #define PacketLengh_Store_2 0x06
+//to Check ID
+#define PacketLengh_CheckID_1 0x00
+#define PacketLengh_CheckID_2 0x06
 //to delete template
 #define PacketLengh_Delet_1 0x00
 #define PacketLengh_Delet_2 0x07
@@ -116,7 +121,8 @@ void FingerPrint_DelTemplate(u16 PageID, u16 N);
 void FingerPrint_Search(void);
 //Function To Format The Flash Memory
 void FingerPrint_Format(void);
-
+//Function To Check The PageID and Load the Specified Template to CharBuffer1/2
+void FingerPrint_CheckID(u8 BufferID, u16 PageID);
 
 
 //Acknowledge Package Function which return Ack "Confirmation Code"

@@ -11,6 +11,29 @@ u8 FingerPrint_Store_Main(u16 PageId)
 	//Initialize of Ack with failure befor recieving any package
 	u8 Ack=FailToFindMatchingFinger;
 	enum Ack_Packet Ack_Packet;
+	//Check for the ID
+	 FingerPrint_CheckID(Char_1,PageId);
+	 _delay_ms(300);
+	Ack=FingerPrint_AckPacket_All();
+	switch(Ack)
+	{
+	case(Command_Complete):
+	  Ack_Packet=Success;
+	break;
+	case(Command_ErrorRecPack):
+	   return ErrorRecPack;
+	break;
+	case(Command_ErrorWhenRecTemplate):
+	  return InvalidTemplate;
+	break;
+	case(Command_ErrorAddrPageID):
+	  return ErrorAddrPageID;
+	break;
+	default:
+	  return UnknownError;
+	break;
+	}
+	//*****************
 	//Getting Image......
 	FingerPrint_CollectImage();
 	_delay_ms(300);

@@ -162,6 +162,32 @@ void FingerPrint_Store(u8 BufferID, u16 PageID)
 	vUART_Transmit(CheckSum_High);
 	vUART_Transmit(CheckSum_Low);
 }
+void FingerPrint_CheckID(u8 BufferID, u16 PageID)
+{
+	PageID_High =PageID>>8;
+	PageID_Low = (u8)PageID;
+	CheckSum=PackageIndentifier+PacketLengh_CheckID_1+PacketLengh_CheckID_2+FINGER_Print_CheckID
+	+BufferID+PageID_High+PageID_Low;
+	CheckSum_High=CheckSum>>8;
+	CheckSum_Low=(u8)CheckSum;
+
+
+	vUART_Transmit(Header_1);
+	vUART_Transmit(Header_2);
+	vUART_Transmit(ModuleAddress_1);
+	vUART_Transmit(ModuleAddress_2);
+	vUART_Transmit(ModuleAddress_3);
+	vUART_Transmit(ModuleAddress_4);
+	vUART_Transmit(PackageIndentifier);
+	vUART_Transmit(PacketLengh_CheckID_1);
+	vUART_Transmit(PacketLengh_CheckID_2);
+	vUART_Transmit(FINGER_Print_CheckID);
+	vUART_Transmit(BufferID);
+	vUART_Transmit(PageID_High);
+	vUART_Transmit(PageID_Low);
+	vUART_Transmit(CheckSum_High);
+	vUART_Transmit(CheckSum_Low);
+}
 
 void FingerPrint_Format(void)
 {

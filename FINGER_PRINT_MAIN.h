@@ -29,6 +29,7 @@ enum Ack_Packet
 	ErrorWrittingFlash,
 	ErrorWhenRecTemplate,
 	UnknownError,
+	InvalidTemplate,
 };
 //***********
 
