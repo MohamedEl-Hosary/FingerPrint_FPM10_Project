@@ -21,8 +21,7 @@
 #include <avr/delay.h>
 
 
-#define Trueeeeee 0x01;
-#define Falseeeeee 0x00;
+
 
 #define True 0x01;
 #define False 0x00;
