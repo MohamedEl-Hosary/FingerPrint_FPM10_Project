@@ -28,6 +28,7 @@ enum Ack_Packet
 	ErrorAddrPageID,
 	ErrorWrittingFlash,
 	ErrorWhenRecTemplate,
+	UnknownError,
 };
 //***********
 

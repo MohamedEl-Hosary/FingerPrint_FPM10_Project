@@ -29,6 +29,9 @@ u8 FingerPrint_Store_Main(u16 PageId)
 	case(Command_FailToDetectFinger):
 	  return FailToDetectFinger;
 	break;
+	default:
+	  return UnknownError;
+	break;
 	}
 	//**********************
 	//Generate a character file and store it in char file one
@@ -48,6 +51,9 @@ u8 FingerPrint_Store_Main(u16 PageId)
 	break;
 	case(Command_FailToGenCharFileLackness):
 	  return FailToGenCharFileLackness;
+	break;
+	default:
+	  return UnknownError;
 	break;
 	}
 	//**********************
@@ -69,6 +75,9 @@ u8 FingerPrint_Store_Main(u16 PageId)
 	case(Command_FailToGenCharFileLackness):
 	  return FailToGenCharFileLackness;
 	break;
+	default:
+	  return UnknownError;
+	break;
 	}
 	//*********************
 	//Generate a template combination from charcter file one and two
@@ -85,6 +94,9 @@ u8 FingerPrint_Store_Main(u16 PageId)
 	break;
 	case(Command_FailToCombCharFile ):
 	  return FailToCombCharFile;
+	break;
+	default:
+	  return UnknownError;
 	break;
 	}
 	//*******************
@@ -105,6 +117,9 @@ u8 FingerPrint_Store_Main(u16 PageId)
 	break;
 	case(Command_ErrorWrittingFlash ):
 	  return ErrorWrittingFlash;
+	break;
+	default:
+	  return UnknownError;
 	break;
 	}
 	//*********************
@@ -133,6 +148,9 @@ u8 FingerPrint_Search_Main()
 	case(Command_FailToDetectFinger):
 	  return FailToDetectFinger;
 	break;
+	default:
+	  return UnknownError;
+	break;
 	}
 	//**********************
 	//Generate a character file and store it in char file one
@@ -153,6 +171,9 @@ u8 FingerPrint_Search_Main()
 	case(Command_FailToGenCharFileLackness):
 	  return FailToGenCharFileLackness;
 	break;
+	default:
+	  return UnknownError;
+	break;
 	}
 	//**********************
 	//Searching for the char file one
@@ -172,6 +193,9 @@ u8 FingerPrint_Search_Main()
 	break;
 	case(Command_ErrorWhenRecTemplate):
 	  return ErrorWhenRecTemplate;
+	break;
+	default:
+	  return UnknownError;
 	break;
 	}
 	//*********************
