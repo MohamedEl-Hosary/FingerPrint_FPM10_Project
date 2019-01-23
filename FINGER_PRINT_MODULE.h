@@ -40,9 +40,12 @@
 //To Search Finger Print
 #define FINGER_Print_SearchFinger 0x04
 
-/**************** Confirmation Codes ****************/
-/****************************************************/
+/***************************** Confirmation Codes ************************************/
+/*************************************************************************************/
 
+
+//There is one bye returned from ACk frame called confirmation code we checked it to check if the frame is send correctly
+//or not and also to check if every process done correctly or not
 #define Command_Complete  0x00
 #define Command_ErrorRecPack  0x01
 #define Command_NoFingerOnSensor  0x02
@@ -58,8 +61,8 @@
 #define Command_ErrorAddrPageID  0x0B
 
 
-/******************* Packet Format ******************/
-/****************************************************/
+/****************************** Packet Format ****************************************/
+/*************************************************************************************/
 
 #define Header_1 0xEF
 #define Header_2 0x01
@@ -102,8 +105,8 @@
 
 
 
-/******************* Packet Format ******************/
-/****************************************************/
+/******************************* Packet Functions (PROTOTYPES) *********************************/
+/***********************************************************************************************/
 
 
 
@@ -126,8 +129,10 @@ void FingerPrint_CheckID(u8 BufferID, u16 PageID);
 
 
 //Acknowledge Package Function which return Ack "Confirmation Code"
-//Type if true Ack Packet for all frames except search, IF False ACK Packet For Serach
+
+//Ack Function For All Packets Except Search
 u8 FingerPrint_AckPacket_All(void);
+//Ack Function For Search Packet Only
 u8 FingerPrint_AckPacket_Search(void);
 
 
